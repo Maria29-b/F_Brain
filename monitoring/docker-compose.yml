@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  prometheus:
+    build: ./prmetheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus_data:/prometheus
+    networks:
+      - monitoring
+
+  grafana:
+    build: ./grafana
+    ports:
+      - "4173:3000"
+    networks:
+      - monitoring
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  monitoring:

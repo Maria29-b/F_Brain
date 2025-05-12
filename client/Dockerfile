@@ -4,11 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 COPY vite.config.js ./
-COPY . .
 
-RUN npm install
+RUN yarn install
+
+COPY . .
 
 EXPOSE 5173
 EXPOSE 4173
 
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["yarn", "run", "dev", "--", "--host"]
