@@ -6,14 +6,14 @@ services:
     ports:
       - "5173:5173"
     networks:
-      -f_brain_network
+      - f_brain_network
 
   server:
     build: ./server
     ports:
-      -"8000:8000"
+      - "8000:8000"
     networks:
-      -f_brain_network
+      - f_brain_network
 
   prometheus:
     build: ./monitoring/prometheus
@@ -22,7 +22,7 @@ services:
     ports:
       - "9090:9090"
     networks:
-      -f_brain_network
+      - f_brain_network
 
   grafana:
     build: ./monitoring/grafana
