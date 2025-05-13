@@ -30,7 +30,7 @@ services:
     image: prom/prometheus
     container_name: prometheus
     ports:
-      - "3000:9090"
+      - "9090:9090"
     volumes:
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
@@ -78,5 +78,5 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
-valumes:
+volumes:
   postgres_data:
